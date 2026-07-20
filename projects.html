@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects &amp; Publications &middot; Sreeyutha Ratala</title>
+  <meta name="description" content="Projects and publications: LLM agents, scientific ML, and research papers by Sreeyutha Ratala.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10024;</text></svg>">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<div class="page">
+  <header class="site-head">
+    <h1><a href="index.html">Sreeyutha Ratala</a></h1>
+    <p class="email-line" id="email" aria-label="email address, written out to avoid bots"></p>
+    <div class="icon-row">
+      <a href="https://www.linkedin.com/in/sreeyutharatala/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+      </a>
+      <a href="https://github.com/SreeyuR" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--ink)" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=AALzx9wAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269z"/><path fill="#a0c3ff" d="M12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+      </a>
+    </div>
+    <nav class="tabs">
+      <a href="index.html">about</a>
+      <a href="leadership.html">leadership</a>
+      <a class="on" href="projects.html">projects &amp; publications</a>
+      <a href="fun.html">fun</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title reveal">Projects &amp; Publications</h1>
+    <p class="page-sub reveal">Grouped into four areas, click a chip to jump. Every project wears
+    badges for what it comes with: papers, posters, and slides open right here on the site.</p>
+
+    <div class="chip-row reveal">
+      <a class="chip yellow" href="#research">Publications &amp; Research</a>
+      <a class="chip blue" href="#llm-agents">LLMs &amp; Agents</a>
+      <a class="chip pink" href="#scientific-ml">Scientific ML</a>
+      <a class="chip green" href="#for-fun">Competitions &amp; For Fun</a>
+    </div>
+
+    <section class="band yellow reveal" id="research">
+      <h2>Publications &amp; Research</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));">
+        <div class="card" id="biasguarrd">
+          <h3>BiasGUARRD: Mitigating Cognitive Biases in LLMs</h3>
+          <p class="sub">Accepted to the ICML 2025 Workshop on Reliable and Responsible Foundation Models</p>
+          <p>A modular multi-agent framework with reasoning tools for bias detection, rephrasing,
+          and judgment, improving LLM decision consistency by 63% in conflict-resolution tasks.</p>
+          <div class="badges">
+            <a class="badge paper" href="https://openreview.net/forum?id=LH9jXb4B6a" target="_blank" rel="noopener">paper &#8599;</a>
+            <button class="badge poster" data-pdf="assets/pdf/biasguarrd-poster.pdf" data-title="BiasGUARRD Poster (ICML 2025 R2-FM Workshop)">poster</button>
+            <a class="badge code" href="https://github.com/SreeyuR/BiasGUARRD" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Mathematical Modeling via Inductive Reasoning in LLMs</h3>
+          <p class="sub">EPFL ML4ED Lab &middot; Caltech SURF 2025</p>
+          <p>A novel benchmark and evaluation framework testing whether LLMs can infer symbolic
+          models from numerical data, with structured reasoning strategies (guided search,
+          backtracking) improving accuracy by up to 37%.</p>
+          <div class="badges">
+            <button class="badge paper" data-pdf="assets/pdf/inductive-reasoning-report.pdf" data-title="Mathematical Modeling via Inductive Reasoning, Report">report</button>
+            <button class="badge slides" data-pdf="assets/pdf/inductive-reasoning-presentation.pdf" data-title="Inductive Reasoning, Final Presentation">slides</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Multi-Agent RL Cooperation</h3>
+          <p class="sub">Caltech SURF &middot; presented at SCCUR</p>
+          <p>A multi-agent model and robot simulator using deep reinforcement learning and computer
+          vision to study cooperation on complex task sequences, improving success rate,
+          scalability, and generalizability by 50%+.</p>
+          <div class="badges">
+            <button class="badge slides" data-pdf="assets/pdf/multiagent-rl-presentation.pdf" data-title="Multi-Agent RL Cooperation, Talk Slides">talk slides</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band blue reveal" id="llm-agents">
+      <h2>LLMs &amp; Agents</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));">
+        <div class="card">
+          <h3>RL Post-Training for LLM Reasoning</h3>
+          <p class="sub">Gkioxari Lab, Caltech &middot; ongoing</p>
+          <p>Developing RL post-training algorithms for LLM reasoning with fine-grained credit
+          assignment beyond GRPO's sequence-level advantages, exploring memory-, compute-, and
+          sample-efficient training signals for mathematical reasoning.</p>
+        </div>
+        <div class="card">
+          <h3>LLM Agent for Chrome Metric Discovery</h3>
+          <p class="sub">Google</p>
+          <p>An LLM agent integrated with Gemini CLI: tools for metric discovery, natural language
+          to SQL, and automated analysis via an MCP server, plus an AI-driven testing framework
+          that reduced hallucinations across hundreds of use cases.</p>
+        </div>
+        <div class="card">
+          <h3>Multimodal Agent for Discovering and Solving Operational Issues for Technicians</h3>
+          <p class="sub">Trane Technologies</p>
+          <p>A multimodal agentic AI assistant converting natural language into SQL/GraphQL across
+          cloud databases, using prompt engineering, model chaining, and RAG over a vector
+          database to accelerate solutions for high-stakes operational issues.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band pink reveal" id="scientific-ml">
+      <h2>Scientific ML</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));">
+        <div class="card">
+          <h3>Tokamak Disruption Prediction</h3>
+          <p class="sub">Anandkumar Lab, Caltech</p>
+          <p>A semi-supervised pipeline with Fourier Neural Operators and Transformers on fusion
+          time-series data, predicting tokamak disruptions more accurately than SOTA methods to
+          help make nuclear fusion commercially viable.</p>
+          <div class="badges">
+            <button class="badge paper" data-pdf="assets/pdf/tokamak-report.pdf" data-title="Tokamak Disruption Prediction, Report">report</button>
+            <button class="badge slides" data-pdf="assets/pdf/tokamak-presentation.pdf" data-title="Tokamak Disruption Prediction, Final Presentation">slides</button>
+            <a class="badge code" href="https://github.com/SreeyuR/cs-165-final-project" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cryo-EM 3D Protein Reconstruction</h3>
+          <p class="sub">Bouman Lab, Caltech</p>
+          <p>Enhancing a generative deep learning model (VAE + Fourier-space decoding) to
+          reconstruct 3D protein structures from noisy 2D cryo-EM images, advancing drug
+          discovery and complementing AlphaFold.</p>
+          <div class="badges">
+            <button class="badge paper" data-pdf="assets/pdf/cryoem-report.pdf" data-title="CryoDRGN, Final Report">report</button>
+            <a class="badge code" href="https://github.com/ericawang1/CryoDRGN-Group" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Forecasting the Progression of Humanity on the Kardashev Scale through 2100 A.D. with Machine Learning</h3>
+          <p class="sub">Caltech</p>
+          <p>Machine learning models forecasting humanity's energy-scale progression on the
+          Kardashev scale through the year 2100.</p>
+          <div class="badges">
+            <button class="badge paper" data-pdf="assets/pdf/kardashev-report.pdf" data-title="Kardashev Scale Forecasting, Report">report</button>
+            <button class="badge slides" data-pdf="assets/pdf/kardashev-slides.pdf" data-title="Kardashev Scale Forecasting, Slides">slides</button>
+            <a class="badge code" href="https://github.com/SreeyuR/ay159-forecast-of-human-progress" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band green reveal" id="for-fun">
+      <h2>Competitions &amp; For Fun</h2>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));">
+        <div class="card">
+          <h3>Discovering Network Properties in the Epstein Files and Network-Aware Discovery in Second-Hand Fashion Ecosystems</h3>
+          <p class="sub">Network science project proposal</p>
+          <p>Two proposed network studies: graph properties of the Epstein files' social network,
+          and network-aware discovery in second-hand fashion ecosystems, with a proof-of-concept
+          implementation.</p>
+          <div class="badges">
+            <button class="badge paper" data-pdf="assets/pdf/network-proposal.pdf" data-title="Network Properties, Full Proposal">proposal</button>
+            <button class="badge slides" data-pdf="assets/pdf/network-presentation.pdf" data-title="Network Properties, Presentation">slides</button>
+            <a class="badge code" href="https://github.com/SreeyuR/cs144-proposal" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Return of the Imposter</h3>
+          <p class="sub">Game built in C on a custom physics engine</p>
+          <p>A fun blend of Subway Surfers set in the Among Us universe: platform your imposter
+          through a spaceship, outwit crewmates, and reach the reactor.
+          <a href="fun.html">Play it right here on the fun page!</a></p>
+          <div class="badges">
+            <a class="badge code" href="https://github.com/SreeyuR/return-of-the-imposter-game" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Nutri-Cart: Hacktech AI Web App</h3>
+          <p class="sub">Caltech Hacktech hackathon &middot; built in 36 hours</p>
+          <p>A web app that optimizes grocery shopping by balancing nutrition, time, and budget
+          tradeoffs, with an ML model predicting health issues in-app.</p>
+          <div class="badges">
+            <a class="badge code" href="https://github.com/SreeyuR/hacktech-final" target="_blank" rel="noopener">code &#8599;</a>
+            <button class="badge slides" data-pdf="assets/pdf/nutricart-presentation.pdf" data-title="Nutri-Cart, Presentation">slides</button>
+            <a class="badge video" href="https://drive.google.com/file/d/1e3qD-9FdCPc11lwmtDWNjvxpQSQV4Isp/view" target="_blank" rel="noopener">video &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>CheXpert ML Competition: 3rd Place</h3>
+          <p class="sub">Caltech</p>
+          <p>An end-to-end supervised pipeline for automated anomaly detection in radiograph
+          images, with data curation, big-data processing, and model optimization.</p>
+          <div class="badges">
+            <a class="badge code" href="https://github.com/SreeyuR/CheXpert-ML-Competition-at-Caltech" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Kaggle Churn Prediction: 5th Place</h3>
+          <p class="sub">Caltech ML competition</p>
+          <p>An ensemble of XGBoost, Random Forest, and CatBoost predicting mobile network
+          customer discontinuation.</p>
+        </div>
+        <div class="card">
+          <h3>NanoGPT Q&amp;A</h3>
+          <p class="sub">GPT from scratch</p>
+          <p>Byte-pair encoding, attention, positional embeddings, pre-training and fine-tuning of
+          a GPT built from the ground up.</p>
+          <div class="badges">
+            <a class="badge code" href="https://github.com/SreeyuR/nanoGPT/tree/main" target="_blank" rel="noopener">code &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="email-center reveal">
+    <a class="email-btn" id="email-btn" href="#" target="_blank" rel="noopener">&#9993; &nbsp;Email me</a>
+  </div>
+
+  <footer class="footer">
+    &copy; <span id="year">2026</span> Sreeyutha Ratala
+  </footer>
+</div>
+
+<div class="pdf-overlay" id="pdf-overlay" role="dialog" aria-modal="true" aria-label="Document viewer">
+  <div class="pdf-box">
+    <div class="pdf-bar">
+      <span class="title">Document</span>
+      <a class="newtab" href="#" target="_blank" rel="noopener">open in new tab &#8599;</a>
+      <button class="close" aria-label="Close viewer">close &#10005;</button>
+    </div>
+    <iframe title="PDF document"></iframe>
+  </div>
+</div>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
+  <span>&#9728;&#65039;</span><span class="track"><span class="knob"></span></span><span>&#127769;</span>
+</button>
+
+<a class="game-fab" href="fun.html">
+  <span class="orb">&#127918;</span><span>Want to try something cool?</span>
+</a>
+
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

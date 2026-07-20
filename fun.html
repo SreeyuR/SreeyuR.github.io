@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fun &middot; Sreeyutha Ratala</title>
+  <meta name="description" content="Play Return of the Imposter, a browser game built in C, and see life beyond the lab.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10024;</text></svg>">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<div class="page">
+  <header class="site-head">
+    <h1><a href="index.html">Sreeyutha Ratala</a></h1>
+    <p class="email-line" id="email" aria-label="email address, written out to avoid bots"></p>
+    <div class="icon-row">
+      <a href="https://www.linkedin.com/in/sreeyutharatala/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+      </a>
+      <a href="https://github.com/SreeyuR" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--ink)" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=AALzx9wAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269z"/><path fill="#a0c3ff" d="M12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+      </a>
+    </div>
+    <nav class="tabs">
+      <a href="index.html">about</a>
+      <a href="leadership.html">leadership</a>
+      <a href="projects.html">projects &amp; publications</a>
+      <a class="on" href="fun.html">fun</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title reveal">Something cool &#10024;</h1>
+    <p class="page-sub reveal">You found it! <b style="color:var(--ink)">Return of the Imposter</b>
+    is a game my friends and I built in C on a custom physics engine, compiled to WebAssembly so it
+    runs right here in your browser. You're an imposter on a spaceship: platform through the
+    levels, dodge (or eliminate) crewmates, and reach the reactor.</p>
+
+    <div class="game-shell reveal" id="game-shell">
+      <div class="game-cover">
+        <h3>Return of the Imposter</h3>
+        <p>A fun blend of Subway Surfers set in the Among Us universe. Best played on a computer
+        with a keyboard.</p>
+        <button class="btn" id="launch-game">&#9654; &nbsp;Play now</button>
+      </div>
+    </div>
+    <p class="controls-note reveal">
+      controls &middot; WASD to move &middot; click anywhere to aim the tongue &middot;
+      P to pause &middot; R to restart level<br>
+      <a href="game/game.html" target="_blank" rel="noopener">open the game full-page &#8599;</a> &middot;
+      <a href="https://github.com/SreeyuR/return-of-the-imposter-game" target="_blank" rel="noopener">source code on GitHub &#8599;</a>
+    </p>
+
+    <h2 class="page-title reveal" style="font-size:26px; margin-top:64px">Agent Academy &#128035;</h2>
+    <p class="page-sub reveal">Hatch and train your own tiny agent! It learns by reinforcement
+    learning, live in your browser. Place walls and treats to shape its world, watch it explore,
+    and peek inside its brain to see what it has learned. Graduate it through all three levels.</p>
+
+    <div class="academy-shell reveal">
+      <div class="academy-hud">
+        <span class="stat">level <b id="ac-level">1</b>/3</span>
+        <span class="stat">episodes <b id="ac-episodes">0</b></span>
+        <span class="stat">streak <b id="ac-streak">0</b></span>
+        <span class="spacer"></span>
+        <button class="mini-btn primary" id="ac-train">&#9654; train</button>
+        <button class="mini-btn" id="ac-brain">&#129504; peek inside its brain</button>
+        <button class="mini-btn" id="ac-reset">reset level</button>
+      </div>
+      <div class="academy-hud">
+        <span class="stat">click the grid to edit:</span>
+        <button class="mini-btn active" id="ac-tool-wall">&#129521; wall</button>
+        <button class="mini-btn" id="ac-tool-treat">&#127850; treat</button>
+        <button class="mini-btn" id="ac-tool-erase">&#9986; erase</button>
+        <span class="spacer"></span>
+        <span class="speed-wrap">slow <input type="range" id="ac-speed" min="1" max="60" value="12"> fast</span>
+      </div>
+      <canvas id="academy-canvas" width="900" height="560"></canvas>
+      <p class="academy-note" id="ac-status">press train to start your agent's education &middot;
+      it earns +50 for reaching the star, +5 per treat, and small penalties for wandering &middot;
+      the brain view shows how much it values each square</p>
+    </div>
+
+    <h2 class="page-title reveal" style="font-size:26px; margin-top:64px">Beyond the lab</h2>
+    <p class="page-sub reveal">Travel photos and adventures, coming to this gallery soon.</p>
+    <div class="photo-grid reveal">
+      <div class="placeholder-tile">travel photo coming soon</div>
+      <div class="placeholder-tile">travel photo coming soon</div>
+      <div class="placeholder-tile">travel photo coming soon</div>
+      <div class="placeholder-tile">travel photo coming soon</div>
+      <div class="placeholder-tile">travel photo coming soon</div>
+      <div class="placeholder-tile">travel photo coming soon</div>
+    </div>
+  </main>
+
+  <div class="email-center reveal">
+    <a class="email-btn" id="email-btn" href="#" target="_blank" rel="noopener">&#9993; &nbsp;Email me</a>
+  </div>
+
+  <footer class="footer">
+    &copy; <span id="year">2026</span> Sreeyutha Ratala
+  </footer>
+</div>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
+  <span>&#9728;&#65039;</span><span class="track"><span class="knob"></span></span><span>&#127769;</span>
+</button>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/agent-academy.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
