@@ -836,7 +836,7 @@ a:focus-visible, button:focus-visible {
 .compact .tabs a { font-size: 14px; padding-bottom: 9px; }
 .compact .cols { padding-top: 12px; gap: 52px; }
 .compact .col-left { width: 250px; gap: 10px; }
-.compact .portrait, .compact .portrait-fallback { width: 158px; height: 158px; box-shadow: 0 0 0 7px var(--glow), 0 0 30px var(--glow); }
+.compact .portrait, .compact .portrait-fallback { width: 205px; height: 205px; box-shadow: 0 0 0 7px var(--glow), 0 0 30px var(--glow); }
 .compact .tldr { font-size: 12px; line-height: 1.6; }
 .compact .jump-pill { padding: 8px 16px; font-size: 13px; width: 220px; }
 .compact .logo-row { margin-top: 2px; gap: 10px; }
