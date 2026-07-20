@@ -396,6 +396,8 @@ a:focus-visible, button:focus-visible {
   margin: 0;
 }
 
+.card .prof a { color: inherit; }
+
 .card p { font-size: 13px; color: var(--soft); margin: 0; }
 
 .badges { display: flex; gap: 7px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
