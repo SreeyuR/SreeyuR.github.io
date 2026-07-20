@@ -165,6 +165,37 @@
     }, { threshold: 0.08 });
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
+    var wall = document.getElementById("travel-wall");
+    var lb = document.getElementById("lightbox");
+    if (wall && lb) {
+      var photos = Array.prototype.slice.call(wall.querySelectorAll("img"));
+      var lbImg = lb.querySelector("img");
+      var current = 0;
+      function showPhoto(i) {
+        current = (i + photos.length) % photos.length;
+        lbImg.src = photos[current].src;
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function hidePhoto() {
+        lb.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      photos.forEach(function (img, i) {
+        img.parentElement.addEventListener("click", function () { showPhoto(i); });
+      });
+      lb.querySelector(".lb-close").addEventListener("click", hidePhoto);
+      lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); showPhoto(current - 1); });
+      lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); showPhoto(current + 1); });
+      lb.addEventListener("click", function (e) { if (e.target === lb) hidePhoto(); });
+      document.addEventListener("keydown", function (e) {
+        if (!lb.classList.contains("open")) return;
+        if (e.key === "Escape") hidePhoto();
+        if (e.key === "ArrowLeft") showPhoto(current - 1);
+        if (e.key === "ArrowRight") showPhoto(current + 1);
+      });
+    }
+
     var launch = document.getElementById("launch-game");
     if (launch) {
       launch.addEventListener("click", function () {
