@@ -45,7 +45,7 @@
     brain: false,
     tool: "wall",
     collected: {},
-    trail: [],
+    stepAcc: 0,
     confetti: [],
     graduated: false,
     optimal: 1
@@ -72,7 +72,7 @@
     state.steps = 0;
     state.streak = 0;
     state.collected = {};
-    state.trail = [];
+    state.stepAcc = 0;
     state.graduated = false;
     computeOptimal();
     updateHud();
@@ -132,10 +132,6 @@
 
     state.agent = [nr, nc];
     state.steps++;
-    if (!reduced) {
-      state.trail.push([nr, nc]);
-      if (state.trail.length > 14) state.trail.shift();
-    }
 
     if (done || state.steps >= state.maxSteps) endEpisode(success);
   }
@@ -205,10 +201,12 @@
           var q = state.Q[r][c];
           var v = Math.max(q[0], q[1], q[2], q[3]);
           if (v > 0.1) {
-            ctx.fillStyle = "rgba(168,208,240," + Math.min(0.55, v / 60) + ")";
+            /* green: the agent expects good things here */
+            ctx.fillStyle = "rgba(92,200,132," + Math.min(0.6, v / 55) + ")";
             ctx.fillRect(x + 2, y + 2, CW - 4, CH - 4);
           } else if (v < -0.1) {
-            ctx.fillStyle = "rgba(242,150,170," + Math.min(0.4, -v / 30) + ")";
+            /* red: the agent expects trouble here */
+            ctx.fillStyle = "rgba(230,106,126," + Math.min(0.55, -v / 25) + ")";
             ctx.fillRect(x + 2, y + 2, CW - 4, CH - 4);
           }
         }
@@ -241,15 +239,6 @@
 
     /* goal star */
     drawStar(state.goal[1] * CW + CW / 2, state.goal[0] * CH + CH / 2, 16, "#f5e3a3");
-
-    /* trail */
-    for (var t = 0; t < state.trail.length; t++) {
-      var tr = state.trail[t];
-      ctx.fillStyle = "rgba(168,208,240," + (0.03 + 0.12 * (t / state.trail.length)) + ")";
-      ctx.beginPath();
-      ctx.arc(tr[1] * CW + CW / 2, tr[0] * CH + CH / 2, 13, 0, 7);
-      ctx.fill();
-    }
 
     /* agent */
     var ax = state.agent[1] * CW + CW / 2, ay = state.agent[0] * CH + CH / 2;
@@ -317,8 +306,13 @@
   /* ---------- main loop ---------- */
   function loop() {
     if (state.training && !state.graduated) {
+      /* slider maps to steps per frame at 1/10 scale, so the slowest
+         setting is ~6 steps per second: slow enough to follow each move */
       var speed = parseInt(document.getElementById("ac-speed").value, 10);
-      for (var i = 0; i < speed; i++) {
+      state.stepAcc += speed / 10;
+      var n = Math.floor(state.stepAcc);
+      state.stepAcc -= n;
+      for (var i = 0; i < n; i++) {
         if (!state.training || state.graduated) break;
         envStep();
       }

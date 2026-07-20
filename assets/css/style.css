@@ -771,7 +771,52 @@ a:focus-visible, button:focus-visible {
 .compact .bio-sec p { font-size: 13.5px; margin-bottom: 2px; }
 .compact .email-center { margin-top: 10px; }
 .compact .footer { margin-top: 10px; padding-top: 8px; }
-.compact .page { padding-bottom: 10px; }
+.home .page { padding-bottom: 10px; }
+.compact .page-title { margin-top: 20px; }
+.compact .page-sub { margin-bottom: 18px; }
+.compact .chip-row { margin-bottom: 26px; }
+
+/* ---------- how-to-play boxes ---------- */
+.howto {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 14px 0 8px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 10px 30px;
+}
+
+.howto h4 {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin: 0 0 4px;
+}
+
+.howto p { font-size: 13.5px; color: var(--soft); margin: 0 0 6px; }
+.howto p b { color: var(--ink); font-weight: 650; }
+.howto ul { margin: 0; padding-left: 18px; }
+.howto li { font-size: 13.5px; color: var(--soft); margin-bottom: 5px; }
+.howto li b { color: var(--ink); font-weight: 650; }
+
+.howto kbd {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 7px;
+  color: var(--ink);
+}
+
+@media (max-width: 800px) {
+  .howto { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 800px) {
   /* phones scroll anyway; undo the squeeze where it hurts readability */

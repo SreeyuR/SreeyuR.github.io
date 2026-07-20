@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10024;</text></svg>">
 </head>
-<body>
+<body class="compact">
 <canvas id="stars"></canvas>
 
 <div class="page">
@@ -35,11 +35,10 @@
   </header>
 
   <main>
-    <h1 class="page-title reveal">Something cool &#10024;</h1>
-    <p class="page-sub reveal">You found it! <b style="color:var(--ink)">Return of the Imposter</b>
-    is a game my friends and I built in C on a custom physics engine, compiled to WebAssembly so it
-    runs right here in your browser. You're an imposter on a spaceship: platform through the
-    levels, dodge (or eliminate) crewmates, and reach the reactor.</p>
+    <h1 class="page-title reveal">Something cool</h1>
+    <p class="page-sub reveal"><b style="color:var(--ink)">Return of the Imposter</b>
+    is a platform game my friends and I built in C on a custom physics engine, compiled to
+    WebAssembly so it runs right here in your browser.</p>
 
     <div class="game-shell reveal" id="game-shell">
       <div class="game-cover">
@@ -49,17 +48,40 @@
         <button class="btn" id="launch-game">&#9654; &nbsp;Play now</button>
       </div>
     </div>
+    <div class="howto reveal">
+      <div>
+        <h4>The goal</h4>
+        <p>You're an <b>imposter on a spaceship</b>. Platform through each level and reach the
+        <b>vent at the end</b> to advance; your ultimate mission is to reach the reactor and
+        destroy the ship.</p>
+        <p>Crewmates attack when you're in their <b>line of sight</b>, and hitting them or
+        obstacles costs hearts (see your health bar, top left). Lose them all and the level
+        restarts.</p>
+        <p><b>Your secret weapons:</b> click to shoot your tongue, which eliminates crewmates and
+        can grapple onto walls like a spring. The black holes are actually trampolines that fling
+        you forward with momentum.</p>
+      </div>
+      <div>
+        <h4>Controls</h4>
+        <ul>
+          <li><b>Mouse</b> to navigate the main menu and pick a level</li>
+          <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move and jump</li>
+          <li><b>Click anywhere</b> to aim and shoot your tongue</li>
+          <li><kbd>P</kbd> to pause and return to the menu</li>
+          <li><kbd>R</kbd> to restart the level</li>
+        </ul>
+        <p style="margin-top:8px">Best played on a computer with a keyboard.</p>
+      </div>
+    </div>
     <p class="controls-note reveal">
-      controls &middot; WASD to move &middot; click anywhere to aim the tongue &middot;
-      P to pause &middot; R to restart level<br>
       <a href="game/game.html" target="_blank" rel="noopener">open the game full-page &#8599;</a> &middot;
       <a href="https://github.com/SreeyuR/return-of-the-imposter-game" target="_blank" rel="noopener">source code on GitHub &#8599;</a>
     </p>
 
-    <h2 class="page-title reveal" style="font-size:26px; margin-top:64px">Agent Academy &#128035;</h2>
-    <p class="page-sub reveal">Hatch and train your own tiny agent! It learns by reinforcement
-    learning, live in your browser. Place walls and treats to shape its world, watch it explore,
-    and peek inside its brain to see what it has learned. Graduate it through all three levels.</p>
+    <h2 class="page-title reveal" style="font-size:26px; margin-top:64px">Agent Academy</h2>
+    <p class="page-sub reveal">Train your own tiny AI! The little blue creature below learns by
+    <b style="color:var(--ink)">reinforcement learning</b>, the same idea behind how modern AI
+    models are trained, running live in your browser.</p>
 
     <div class="academy-shell reveal">
       <div class="academy-hud">
@@ -77,12 +99,38 @@
         <button class="mini-btn" id="ac-tool-treat">&#127850; treat</button>
         <button class="mini-btn" id="ac-tool-erase">&#9986; erase</button>
         <span class="spacer"></span>
-        <span class="speed-wrap">slow <input type="range" id="ac-speed" min="1" max="60" value="12"> fast</span>
+        <span class="speed-wrap">slow <input type="range" id="ac-speed" min="1" max="60" value="10"> fast</span>
       </div>
       <canvas id="academy-canvas" width="900" height="560"></canvas>
-      <p class="academy-note" id="ac-status">press train to start your agent's education &middot;
-      it earns +50 for reaching the star, +5 per treat, and small penalties for wandering &middot;
-      the brain view shows how much it values each square</p>
+      <p class="academy-note" id="ac-status">press train to start your agent's education</p>
+    </div>
+
+    <div class="howto reveal">
+      <div>
+        <h4>The goal</h4>
+        <p>Your agent (the glowing blue creature) needs to learn to reach the
+        <b>yellow star</b>. It starts out knowing nothing, so it wanders randomly. Every attempt
+        is one <b>episode</b>: reaching the star earns it a big reward, and over many episodes it
+        figures out the best route on its own. That's reinforcement learning!</p>
+        <p>Each time it finds the star quickly, its <b>streak</b> grows. A streak of 6 means it
+        has mastered the level and moves up a grade. Help it master <b>all 3 levels</b> and it
+        graduates.</p>
+        <p>Watch out: the <b>red discs</b> are hazards that end the episode on contact. Your agent
+        will learn to avoid them.</p>
+      </div>
+      <div>
+        <h4>How to play</h4>
+        <ul>
+          <li>Press <b>&#9654; train</b> and watch it stumble, then improve</li>
+          <li><b>Click the grid</b> to shape its world: add <b>walls</b> to make the maze harder,
+          drop <b>treats</b> (bonus snacks worth +5) to lure it along a path, or <b>erase</b> to
+          clear a square</li>
+          <li>Drag the <b>speed slider</b> to slow training down and watch each step, or speed it up</li>
+          <li>Press <b>peek inside its brain</b> to see what it has learned: squares glow
+          <b style="color:#5cc884">green</b> where it expects good things and
+          <b style="color:#e66a7e">red</b> where it expects trouble</li>
+        </ul>
+      </div>
     </div>
 
     <h2 class="page-title reveal" style="font-size:26px; margin-top:64px">Beyond the lab</h2>
